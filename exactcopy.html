@@ -1,0 +1,15 @@
+<!-- Augmented Reality on the Web in 10 lines of html! https://github.com/jeromeetienne/ar.js -->
+<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+<script src="https://rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.js"></script>
+<script>THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'</script>
+<body style='margin : 0px; overflow: hidden;'>
+	<a-scene embedded artoolkit='sourceType: webcam;'>
+		<a-assets>
+				<a-asset-item id="shirtobj" src="T-shirt-male-obj.obj"></a-asset-item>
+				<a-asset-item id="shirtmtl" src="T-shirt-male-obj.mtl"></a-asset-item>
+			</a-assets>
+			<!-- Using the asset management system. -->
+			<a-obj-model src="#shirtobj" mtl="#shirtmtl"></a-obj-model>
+		<a-marker-camera preset='hiro'></a-marker-camera>
+	</a-scene>
+</body>
